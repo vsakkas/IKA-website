@@ -19,6 +19,7 @@ img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;
 .imgl{float:left; margin:0 15px 15px 0; clear:left;}
 .imgr{float:right; margin:0 0 15px 15px; clear:right;}
 
+/*border-bottom: 1px solid #1f1209; */
 /*----------------------------------------------HTML 5 Overrides-------------------------------------*/
 
 address, article, aside, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
@@ -29,7 +30,8 @@ q:after{content:' �'; font-size:26px; line-height:0;}
 
 /* ----------------------------------------------Wrapper-------------------------------------*/
 
-div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
+div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left; box-shadow: -30px 30px 30px 30px #232323;}
+/*border-bottom: 1px solid #1f1209; */
 
 .row1, .row1 a{color:#ECECEC; background-color:#0074D9;}
 .row2{color:#666666; background-color:#FFFFFF;}
