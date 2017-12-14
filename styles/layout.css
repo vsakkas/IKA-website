@@ -147,3 +147,8 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 .top-right a:hover{color:#FF851B; background-color: transparent;}
 
 .title{font-size:22px; font-weight:bold; padding:0 0 20px 0}
+
+input[type="text"]{font-size:13px;}
+input[type="submit"] {font-size:15px; color:#ECECEC; padding: 10px; background-color:#0074D9;}
+
+select[type="text"]{font-size:15px;}
