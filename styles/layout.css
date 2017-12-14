@@ -132,3 +132,18 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 
 #footer{padding:20px 0;}
 #footer p{margin:0; padding:0;}
+
+/*--------------------Container--------------------*/
+
+.container_image{position:relative; text-align:center; color:white;}
+
+.bottom-left{position:absolute; bottom:30px; left:30px;}
+.top-left{position:absolute; top:30px; left:30px;}
+.top-right{position:absolute; top:30px; right:30px; font-size:24px;}
+.bottom-right{position:absolute; bottom:30px; right:30px;}
+.centered{position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);}
+
+.top-right a{color:#ECECEC; background-color: transparent;}
+.top-right a:hover{color:#FF851B; background-color: transparent;}
+
+.title{font-size:22px; font-weight:bold; padding:0 0 20px 0}
