@@ -19,7 +19,6 @@ img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;
 .imgl{float:left; margin:0 15px 15px 0; clear:left;}
 .imgr{float:right; margin:0 0 15px 15px; clear:right;}
 
-/*border-bottom: 1px solid #1f1209; */
 /*----------------------------------------------HTML 5 Overrides-------------------------------------*/
 
 address, article, aside, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
@@ -31,7 +30,6 @@ q:after{content:' �'; font-size:26px; line-height:0;}
 /* ----------------------------------------------Wrapper-------------------------------------*/
 
 div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left; box-shadow: -30px 30px 30px 30px #232323;}
-/*border-bottom: 1px solid #1f1209; */
 
 .row1, .row1 a{color:#ECECEC; background-color:#0074D9;}
 .row2{color:#666666; background-color:#FFFFFF;}
@@ -133,7 +131,7 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 #footer{padding:20px 0;}
 #footer p{margin:0; padding:0;}
 
-/*--------------------Container--------------------*/
+/*--------------------Additional--------------------*/
 
 .container_image{position:relative; text-align:center; color:white;}
 
@@ -147,8 +145,11 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 .top-right a:hover{color:#FF851B; background-color: transparent;}
 
 .title{font-size:22px; font-weight:bold; padding:0 0 20px 0}
+.title-link:hover{color:#FF851B !important;}
 
 input[type="text"]{font-size:13px;}
-input[type="submit"] {font-size:15px; color:#ECECEC; padding: 10px; background-color:#0074D9;}
+input[type="submit"] {padding: 15px; font-size:15px; color:#ECECEC; background-color:#0074D9; border:none;}
+input[type="submit"]:hover{color:#ECECEC; background-color:#0763B4;}
+input[type="submit"]:active{color:#FF851B;}
 
 select[type="text"]{font-size:15px;}
