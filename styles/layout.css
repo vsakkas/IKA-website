@@ -38,7 +38,7 @@ div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left; box
 
 /*----------------------------------------------Generalise-------------------------------------*/
 
-#header, #container, #footer{display:block; width:960px; margin:0 auto;}
+#header, #container, #footer{display:block; width:1080px; margin:0 auto;}
 
 nav ul{margin:0; padding:0; list-style:none;}
 
@@ -54,11 +54,11 @@ form, fieldset, legend{margin:0; padding:0; border:none;}
 legend{display:none;}
 input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif;}
 
-.one_quarter, .two_quarter, .three_quarter, .four_quarter{display:block; float:left; margin:0 10px 10px 0;}
-.one_quarter{width:225px;}
-.two_quarter{width:470px;}
-.three_quarter{width:715px;}
-.four_quarter{width:960px; float:none; margin-right:0; clear:both;}
+.one_quarter, .two_quarter, .three_quarter, .four_quarter{display:block; float:left; margin:10px 20px 20px 0;}
+.one_quarter{width:270px;}
+.two_quarter{width:530px;}
+.three_quarter{width:750px;}
+.four_quarter{width:1080px; float:none; margin-right:0; clear:both;}
 .lastbox{margin-right:0;}
 
 /*----------------------------------------------Header-------------------------------------*/
@@ -130,6 +130,7 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 
 #footer{padding:20px 0;}
 #footer p{margin:0; padding:0;}
+.footer-link{}
 
 /*--------------------Additional--------------------*/
 
@@ -137,7 +138,7 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 
 .bottom-left{position:absolute; bottom:30px; left:30px;}
 .top-left{position:absolute; top:30px; left:30px;}
-.top-right{position:absolute; top:30px; right:30px; font-size:24px;}
+.top-right{position:absolute; top:30px; right:45px; font-size:24px;}
 .bottom-right{position:absolute; bottom:30px; right:30px;}
 .centered{position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);}
 
@@ -153,3 +154,6 @@ input[type="submit"]:hover{color:#ECECEC; background-color:#0763B4;}
 input[type="submit"]:active{color:#FF851B;}
 
 select[type="text"]{font-size:15px;}
+
+.text-link{font-weight:bold}
+.text-link:hover{color:#FF851B;}
