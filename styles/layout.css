@@ -21,7 +21,7 @@ img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;
 
 /*----------------------------------------------HTML 5 Overrides-------------------------------------*/
 
-address, article, aside, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
+article, footer, header, nav, section{display:block; margin:0; padding:0;}
 
 q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
 q:before{content:'� '; font-size:26px;}
@@ -44,11 +44,9 @@ nav ul{margin:0; padding:0; list-style:none;}
 
 h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:16px; font-weight:bold; font-style:normal; line-height:normal; text-transform:uppercase;}
 
-address{font-style:normal;}
-
-blockquote, q{display:block; padding:8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
-blockquote:before, q:before{content:'� '; font-size:26px;}
-blockquote:after, q:after{content:' �'; font-size:26px; line-height:0;}
+q{display:block; padding:8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+q:before{content:'� '; font-size:26px;}
+q:after{content:' �'; font-size:26px; line-height:0;}
 
 form, fieldset, legend{margin:0; padding:0; border:none;}
 legend{display:none;}
@@ -91,8 +89,6 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 
 #container #homepage #latest{}
 #container #homepage #latest article{}
-#container #homepage #latest figure{padding:4px; border:1px solid #D6D6D6; text-align:center;}
-#container #homepage #latest figcaption{padding:5px; text-align:center; color:#666666; background-color:#EEEEEE; text-align:center;}
 
 /* ------Shout-----*/
 
@@ -108,11 +104,6 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 #container #content #services ul li{display:block; width:100%; margin-bottom:30px;}
 #container #content #services ul li.last{ margin-bottom:0;}
 #container #content #services ul li article{}
-#container #content #services ul li article figure{}
-#container #content #services ul li article figure img{float:left; width:180px; height:150px; margin:0; padding:4px; border:1px solid #666666;}
-#container #content #services ul li article figure figcaption{display:block; float:right; width:410px;}
-#container #content #services ul li article figure h2{font-size:14px;}
-#container #content #services ul li article figure footer{}
 
 /* ------Right Column-----*/
 
