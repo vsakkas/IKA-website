@@ -18,19 +18,19 @@
       </div>
       <nav>
         <ul>
-                <li>
-                        <a href="../πληροφορίες_για_συνταξιούχους.html">Συνταξιούχοι</a>
-                      </li>
-                    <li>
-                        <a href="../πληροφορίες_για_εργοδότες.html">Εργοδότες</a>
-                      </li>
-                    <li>
-                        <a href="../page_not_found.html">Εργαζόμενοι</a>
-                      </li>
-                    <li>
-                        <a href="../page_not_found.html">ΑΜΕΑ</a>
-                      </li>
-                       <li>|</li>
+          <li>
+            <a href="../πληροφορίες_για_συνταξιούχους.html">Συνταξιούχοι</a>
+          </li>
+          <li>
+            <a href="../πληροφορίες_για_εργοδότες.html">Εργοδότες</a>
+          </li>
+          <li>
+            <a href="../page_not_found.html">Εργαζόμενοι</a>
+          </li>
+          <li>
+            <a href="../page_not_found.html">ΑΜΕΑ</a>
+          </li>
+          <li>|</li>
           <li class="last">
             <a href="../σύνδεση.html">Σύνδεση</a>
           </li>
@@ -41,43 +41,90 @@
   <!-- content -->
   <div class="wrapper row2">
     <div id="container" class="clear">
-      <div class="title"><a class="title-link" href="../πληροφορίες_για_συνταξιούχους.html">Πληροφορίες για Συνταξιούχους</a> / Υπολογισμός Σύνταξης</div>
+      <div class="title">
+        <a class="title-link" href="../πληροφορίες_για_εργοδότες.html">Πληροφορίες για Εργοδότες</a> / Ασφάλιση Εργαζομένου</div>
       <!-- content body -->
       <div id="homepage">
-          <div class="container_form">
-            <form method="post" action="">
-              <table>
+        <div class="container_form">
+          <form method="post" action="">
+            <table>
+              <td align="top" style="float:left;">
+                <b>Στοιχεία Εργοδότη:</b>
+                <table>
                   <tr>
-                      <td align="right">Κατηγορία ασφαλισμένου:</td>
-                      <td align="left">
-                  <select type="text">
-                      <option value="0">Πολιτικοί Υπάλληλοι Δημοσίου, Ν.Π.Δ.Δ., Ο.Τ.Α., Εκπαιδευτικοί Ιερείς</option>
-                      <option value="1">Μέλη Δ.Ε.Π. - Α.Ε.Ι. Πλήρους Απασχόλησης, Μέλη Ε.Ε.ΔΙ.Π. - Α.Ε.Ι.</option>
-                      <option value="2">Μέλη Ε.Π. - Τ.Ε.Ι. - Μέλη Ε.ΔΙ.Π</option>
-                      <option value="3">Γιατροί Ε.Σ.Υ. Νοσηλευτικών Ιδρυμάτων</option>
-                      <option value="4">Δικαστικοί Λειτουργοί</option>
-                      <option value="5">Διπλωμάτες</option>
-                      <option value="6">Κ.Ε.Π.Ε.</option>
-                    </select>
+                    <td align="right">Όνομα:</td>
+                    <td align="left">
+                      <input type="text" name="first" />
                     </td>
                   </tr>
-                <tr>
-                  <td align="right">Χρόνια Απασχόλησης:</td>
-                  <td align="left">
-                    <input type="text" name="first" />
-                  </td>
-                </tr>
-                <tr>
-                    <td align="left">Ημερομηνία Συνταξιοδότησης:</td>
-                    <td align="left"><br><input id="date" type="date"></td>
-                </tr>
-                <tr>
+                  <tr>
+                    <td align="right">Επώνυμο:</td>
+                    <td align="left">
+                      <input type="text" name="first" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">ΑΜΚΑ:</td>
+                    <td align="left">
+                      <input type="text" name="first" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">Αριθμός Ταυτότητας:</td>
+                    <td align="left">
+                      <input type="text" name="first" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td align="top" style="float:right;">
+                <b>Στοιχεία Εργαζομένου:</b>
+                <table>
+                  <tr>
+                    <td align="right">Όνομα:</td>
+                    <td align="left">
+                      <input type="text" name="first" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">Επώνυμο:</td>
+                    <td align="left">
+                      <input type="text" name="first" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">ΑΜΚΑ:</td>
+                    <td align="left">
+                      <input type="text" name="first" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">Αριθμός Ταυτότητας:</td>
+                    <td align="left">
+                      <input type="text" name="first" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">Κατηγορία ασφαλισμένου:</td>
+                    <td align="left">
+                      <div class="clearBoth"></div>
+                      <input type="radio" name="editList" value="0">Οικιακό Προσωπικό
+                      <input type="radio" name="editList" value="1">Οικοδομοτεχνικά Έργα
+                      <div class="clearBoth"></div>
+                    </td>
+                  </tr>
+                  <tr>
                     <td align="left"></td>
-                  <td align="right"><br><input type="submit" name="submit" value="Υπολογισμός"></td>
-                </tr>
-              </table>
-            </form>
-            <br>
+                    <td align="right">
+                      <br>
+                      <input type="submit" name="submit" value="Υποβολή">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </table>
+          </form>
+          <br>
           <br>
           <p>
             Έχεις κάποιο πρόβλημα ή απορία; Δες τις
@@ -93,23 +140,19 @@
           <br>
           <br>
           <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <!-- Footer -->
-  <div class="wrapper row3">
-    <footer id="footer" class="clear">
-            <p class="fl_right">
-                    <a href="../../index.html">Αρχική</a> |
-                    <a href="../page_not_found.html">Πλοήγηση</a> |
-                    <a href="../page_not_found.html">Όροι Χρήσης</a>
-                </p>
-    </footer>
-  </div>
+    <!-- Footer -->
+    <div class="wrapper row3">
+      <footer id="footer" class="clear">
+        <p class="fl_right">
+          <a href="../../index.html">Αρχική</a> |
+          <a href="../page_not_found.html">Πλοήγηση</a> |
+          <a href="../page_not_found.html">Όροι Χρήσης</a>
+        </p>
+      </footer>
+    </div>
 </body>
 
 </html>
