@@ -35,20 +35,18 @@
             <a href="index/page_not_found.php">ΑΜΕΑ</a>
           </li>
           <li>|</li>
-          <li class="last">
           <?php
           if(isset($_SESSION['login_user']))
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<a href=\"index/page_not_found.php\">$temp</a>";
+            echo "<li><a href=\"index/page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"index/logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
-            echo '<a href="index/σύνδεση.php">Σύνδεση</a>';
+            echo '<li class="last"><a href="index/σύνδεση.php">Σύνδεση</a></li>';
           }
-          ?>   
-          </li>
+          ?>
         </ul>
       </nav>
     </header>

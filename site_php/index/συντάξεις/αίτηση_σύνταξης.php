@@ -35,9 +35,18 @@
             <a href="../page_not_found.php">ΑΜΕΑ</a>
           </li>
           <li>|</li>
-          <li class="last">
-            <a href="../σύνδεση.php">Σύνδεση</a>
-          </li>
+          <?php
+          if(isset($_SESSION['login_user']))
+          {
+            $temp = $_SESSION['login_user'];
+            ///header("Location: ../index.php");
+            echo "<li><a href=\"../page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"../logout.php\">Αποσύνδεση</a></li>";
+          }
+          else
+          {
+            echo '<li class="last"><a href="../σύνδεση.php">Σύνδεση</a></li>';
+          }
+          ?>
         </ul>
       </nav>
     </header>
@@ -122,7 +131,7 @@
     <div class="wrapper row3">
       <footer id="footer" class="clear">
         <p class="fl_right">
-          <a href="../../index.php">Αρχική</a> |
+          <a href="../../../index.php">Αρχική</a> |
           <a href="../page_not_found.php">Πλοήγηση</a> |
           <a href="../page_not_found.php">Όροι Χρήσης</a>
         </p>
