@@ -269,10 +269,10 @@ function test_input($data)
                 <td align="left">
                   <select name="type">
                     <option disabled selected value>select an option</option>
-                    <option value="0"<?php if (isset($type) && $type=="0") echo "selected=\"selected\"";?>>Συνταξιούχος</option>
-                    <option value="1"<?php if (isset($type) && $type=="1") echo "selected=\"selected\"";?>>Εργοδότης</option>
-                    <option value="2"<?php if (isset($type) && $type=="2") echo "selected=\"selected\"";?>>Εργαζόμενος</option>
-                    <option value="3"<?php if (isset($type) && $type=="3") echo "selected=\"selected\"";?>>ΑΜΕΑ</option>
+                    <option value="1"<?php if (isset($type) && $type=="1") echo "selected=\"selected\"";?>>Συνταξιούχος</option>
+                    <option value="2"<?php if (isset($type) && $type=="2") echo "selected=\"selected\"";?>>Εργοδότης</option>
+                    <option value="3"<?php if (isset($type) && $type=="3") echo "selected=\"selected\"";?>>Εργαζόμενος</option>
+                    <option value="4"<?php if (isset($type) && $type=="4") echo "selected=\"selected\"";?>>ΑΜΕΑ</option>
                   </select>
                   <span class="error">* <?php echo $typeErr;?></span>
                 </td>
@@ -285,6 +285,13 @@ function test_input($data)
                 </td>
                 <td>
                   <span class="error"> <?php echo $submitErr;?></span>
+                </td>
+              </tr>
+              <tr>
+                <td align="left">
+                  <br>
+                  <br>
+                  <span class="error">* required fields.</span>
                 </td>
               </tr>
             </table>
