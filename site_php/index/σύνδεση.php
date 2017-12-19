@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   }
   else
   {
-    $username = $_POST["username"];
+    $username = test_input($_POST["username"]);
   }
 
   if (empty($_POST["password"]))
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   }
   else
   {
-    $password = $_POST["password"];
+    $password = test_input($_POST["password"]);
   }
 
 }
@@ -58,6 +58,15 @@ if($correct_input)
     header("Location: ../index.php");
   }
 }
+
+function test_input($data)
+{
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
