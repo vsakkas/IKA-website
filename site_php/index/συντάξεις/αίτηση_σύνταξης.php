@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
   if (empty($_POST["username"]))
   {
-    $usernameErr = "a username is required";
+    $usernameErr = "Απαιτείται η συμπλήρωση του ονόματος χρήστη!";
     $correct_input = false;
   }
   else
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
   if (empty($_POST["password"]))
   {
-    $passwordErr = "a password is required";
+    $passwordErr = "Απαιτείται η συμπλήρωση κωδικού!";
     $correct_input = false;
   }
   else
@@ -148,6 +148,10 @@ function test_input($data)
         <div class="container_form">
           <form method="post" action="">
             <table>
+            <tr>Για να κάνεις αίτηση σύνταξης, απλά κάνε σύνδεση εδώ στον Ατομικό Λογαριασμό Ασφάλισής σου.</tr>
+            <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
+            <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
+            <br>
             <tr>
             <td align="right">Όνομα Χρήστη:</td>
             <td align="left">
@@ -186,9 +190,6 @@ function test_input($data)
             </table>
 
           </form>
-          <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
-          <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
-          <br>
           <p>
             Έχεις κάποιο πρόβλημα ή απορία; Δες τις
             <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή

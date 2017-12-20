@@ -69,6 +69,9 @@ function getUrl() {
         <div class="container_form">
           <form method="post" action="">
             <table>
+              <tr>Για έναν προσεγγιστικό υπολογισμό του ποσού εισφοράς, συμπλήρωσε παρακάτω τα στοιχεία του εργαζομένου: </tr>
+              <br>
+              <br>
               <tr>
                 <td align="right">Κατηγορία ασφαλισμένου:</td>
                 <td align="left">
@@ -113,8 +116,6 @@ function getUrl() {
           <br>
           <br>
           <br>
-          <br>
-          <br>
         </div>
       </div>
     </div>
@@ -131,5 +132,3 @@ function getUrl() {
 </body>
 
 </html>
-
-<!--- radio button: (τυπος εγγραφης) οικιακο προσωπικο/οικοδομοτεχνικα εργα / Ποσο Εργοσήμου ->

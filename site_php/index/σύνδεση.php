@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
   if (empty($_POST["username"]))
   {
-    $usernameErr = "a username is required";
+    $usernameErr = "Απαιτείται η συμπλήρωση ονόματος χρήστη!";
     $correct_input = false;
   }
   else
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
   if (empty($_POST["password"]))
   {
-    $passwordErr = "a password is required";
+    $passwordErr = "Απαιτείται η συμπλήρωση κωδικού!";
     $correct_input = false;
   }
   else
@@ -49,7 +49,7 @@ if($correct_input)
 
   if($result === false)
   {
-    $submitErr = "Wrong username or password, please try again";
+    $submitErr = "Λάθος όνομα χρήστη ή κωδικός. Παρακαλώ, δοκιμάστε πάλι.";
   }
   else
   {

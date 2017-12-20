@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
   if (empty($_POST["username"]))
   {
-    $usernameErr = "a username is required";
+    $usernameErr = "Απαιτείται η συμπλήρωση ονόματος χρήστη!";
     $correct_input = false;
   }
   else
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
   if (empty($_POST["password"]))
   {
-    $passwordErr = "a password is required";
+    $passwordErr = "Απαιτείται η συμπλήρωση κωδικού!";
     $correct_input = false;
   }
   else
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
   if (empty($_POST["name"]))
   {
-    $nameErr = "a name is required";
+    $nameErr = "Απαιτείται η συμπλήρωση ονόματος";
     $correct_input = false;
   }
   else
@@ -56,14 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $name = test_input($_POST["name"]);
     if (!preg_match("/^[a-zA-Z ]*$/",$name))
     {
-      $nameErr = "Only letters and white space allowed";
+      $nameErr = "Μόνο γράμματα και το κενό διάστημα επιτρέπονται!";
       $correct_input = false;
     }
   }
 
   if (empty($_POST["surname"]))
   {
-    $surnameErr = "a surname is required";
+    $surnameErr = "Απαιτείται η συμπλήρωση του επιθέτου!";
     $correct_input = false;
   }
   else
@@ -71,14 +71,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $surname = test_input($_POST["surname"]);
     if (!preg_match("/^[a-zA-Z ]*$/",$surname))
     {
-      $nameErr = "Only letters and white space allowed";
+      $nameErr = "Μόνο γράμματα και το κενό διάστημα επιτρέπονται!";
       $correct_input = false;
     }
   }
 
   if (empty($_POST["amka"]))
   {
-    $amkaErr = "amka is required";
+    $amkaErr = "Απαιτείται η συμπλήρωση του ΑΜΚΑ!";
     $correct_input = false;
   }
   else
@@ -86,14 +86,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $amka = test_input($_POST["amka"]);
     if (!preg_match("/^[0-9]*$/",$amka))
     {
-      $amkaErr = "Only numbers allowed (without whitespace)";
+      $amkaErr = "Μόνο αριθμοί επιτρέπονται!";
       $correct_input = false;
     }
   }
 
   if (empty($_POST["id_number"]))
   {
-    $id_numberErr = "an id_number is required";
+    $id_numberErr = "Απαιτείται η συμπλήρωση του Αριθμού Ταυτότητας!";
     $correct_input = false;
   }
   else
@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $id_number = test_input($_POST["id_number"]);
     if (!preg_match("/^[a-zA-Z0-9]*$/",$id_number))
     {
-      $id_numberErr = "Only letters and numbers allowed (without whitespace)";
+      $id_numberErr = "Μόνο γράμματα και αριθμοί επιτρέπονται!";
       $correct_input = false;
     }
   }
@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   if (empty($_POST["type"]))
   {
     $correct_input = false;
-    $typeErr = "type is required";
+    $typeErr = "Απαιτείται η επιλογή κατηγορίας!";
   }
   else
   {
@@ -217,6 +217,12 @@ function test_input($data)
         <div class="container_form">
           <form method="post" action="">
             <table>
+              <tr>Για ασφάλιση ενός εργαζομένου, απλά κάνε σύνδεση στον Ατομικό Λογαριασμό Ασφάλισής σου μέσα από την
+              παρακάτω φόρμα και έπειτα συμπλήρωσε τα στοιχεία του εργαζομένου:</tr>
+              <br>
+              <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
+            <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
+            <br>
               <td align="top" style="float:left;">
                 <b>Στοιχεία Εργοδότη:</b>
                 <table>
@@ -310,16 +316,11 @@ function test_input($data)
           </form>
           <br>
           <br>
-          <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
-          <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
-          <br>
           <p>
             Έχεις κάποιο πρόβλημα ή απορία; Δες τις
             <a class="text-link" href="../page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="../page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
-          <br>
-          <br>
           <br>
           <br>
           <br>
@@ -339,5 +340,3 @@ function test_input($data)
 </body>
 
 </html>
-
-<!--- radio button: (τυπος εγγραφης) οικιακο προσωπικο/οικοδομοτεχνικα εργα ->

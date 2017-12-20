@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
    if (empty($_POST["type"]))
    {
      $correct_input = false;
-     $typeErr = "type is required";
+     $typeErr = "Απαιτείται η επιλογή κατηγορίας!";
    }
    else
    {
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
    if (empty($_POST["duration"]))
    {
-     $durationErr = "duration is required";
+     $durationErr = "Απαιτείται η συμπλήρωση των χρόνων απασχόλησης!";
      $correct_input = false;
    }
    else
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
      $duration = test_input($_POST["duration"]);
      if (!preg_match("/^[0-9]*$/",$duration))
      {
-       $durationErr = "Only numbers allowed (without whitespace)";
+       $durationErr = "Μόνο αριθμοί επιτρέπονται!";
        $correct_input = false;
      }
    }
@@ -126,6 +126,11 @@ function test_input($data)
           <form method="post" action="">
             <table>
               <tr>
+              Για έναν προσεγγιστικό υπολογισμό του ποσού σύνταξης που δικαιούσαι, συμπλήρωσε τα παρακάτω στοιχεία:
+              </tr>
+              <br>
+              <br>
+              <tr>
                 <td align="right">Κατηγορία ασφαλισμένου:</td>
                 <td align="left">
                   <select name="type">
@@ -177,8 +182,6 @@ function test_input($data)
             <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
-          <br>
-          <br>
           <br>
           <br>
           <br>
