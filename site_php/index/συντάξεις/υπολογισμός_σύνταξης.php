@@ -1,10 +1,18 @@
 <?php
    //ob_start();
    session_start();
+   $_SESSION["previous_page"] = getUrl();
+
+function getUrl() {
+  $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+  $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+  $url .= $_SERVER["REQUEST_URI"];
+  return $url;
+}
 ?>
 <?php
 $duration = $type = "";
-$result = "  -  ";
+$result = "";
 $durationErr = $typeErr = "";
 $correct_input = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -34,8 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
        $correct_input = false;
      }
    }
-   $fromdate = $_POST["fromdate"];
-   //echo $fromdate;
 }
 else
 {
@@ -46,7 +52,7 @@ if($correct_input)
 {
   include '../calc_pension.php';
 
-  $result = calcpension();
+  $result = calcpension($duration);
 
 }
 function test_input($data)
@@ -143,13 +149,6 @@ function test_input($data)
                 </td>
               </tr>
               <tr>
-                <td align="left">Ημερομηνία Συνταξιοδότησης:</td>
-                <td align="left">
-                  <br>
-                  <input id="date" type="date" name="fromdate"  <?php echo (isset($fromdate)) ? "data-date='" . $fromdate . "'" : ""; ?>>
-                </td>
-              </tr>
-              <tr>
                 <td align="left"></td>
                 <td align="right">
                   <br>
@@ -157,9 +156,9 @@ function test_input($data)
                 </td>
               </tr>
               <tr>
-              <td align="right">Result:</td>
+              <td align="right"></td>
                 <td align="left">
-                  <?php echo $result; ?>
+                <span style="background-color: #FFFF00"><?php echo $result; ?></span>
                 </td>
               </tr>
               <tr>

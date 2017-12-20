@@ -1,6 +1,159 @@
 <?php
    //ob_start();
    session_start();
+   $_SESSION["previous_page"] = getUrl();
+
+function getUrl() {
+  $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+  $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+  $url .= $_SERVER["REQUEST_URI"];
+  return $url;
+}
+?>
+<?php
+// define variables and set to empty values
+
+$correct_input = true;
+$usernameErr = $nameErr = $surnameErr = $passwordErr = $amkaErr = $id_numberErr = $typeErr = $submitErr = "";
+$username = $name = $surname = $password = $amka = $id_number = $type = "";
+if(isset($_SESSION['login_user']))
+{
+  $_POST["username"] = $_SESSION['login_user'];
+  $_POST["password"] = $_SESSION['login_password'];
+  $username = test_input($_POST["username"]);
+  $password = test_input($_POST["password"]);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+  if (empty($_POST["username"]))
+  {
+    $usernameErr = "a username is required";
+    $correct_input = false;
+  }
+  else
+  {
+    $username = test_input($_POST["username"]);
+  }
+
+  if (empty($_POST["password"]))
+  {
+    $passwordErr = "a password is required";
+    $correct_input = false;
+  }
+  else
+  {
+    $password = test_input($_POST["password"]);
+  }
+
+  if (empty($_POST["name"]))
+  {
+    $nameErr = "a name is required";
+    $correct_input = false;
+  }
+  else
+  {
+    $name = test_input($_POST["name"]);
+    if (!preg_match("/^[a-zA-Z ]*$/",$name))
+    {
+      $nameErr = "Only letters and white space allowed";
+      $correct_input = false;
+    }
+  }
+
+  if (empty($_POST["surname"]))
+  {
+    $surnameErr = "a surname is required";
+    $correct_input = false;
+  }
+  else
+  {
+    $surname = test_input($_POST["surname"]);
+    if (!preg_match("/^[a-zA-Z ]*$/",$surname))
+    {
+      $nameErr = "Only letters and white space allowed";
+      $correct_input = false;
+    }
+  }
+
+  if (empty($_POST["amka"]))
+  {
+    $amkaErr = "amka is required";
+    $correct_input = false;
+  }
+  else
+  {
+    $amka = test_input($_POST["amka"]);
+    if (!preg_match("/^[0-9]*$/",$amka))
+    {
+      $amkaErr = "Only numbers allowed (without whitespace)";
+      $correct_input = false;
+    }
+  }
+
+  if (empty($_POST["id_number"]))
+  {
+    $id_numberErr = "an id_number is required";
+    $correct_input = false;
+  }
+  else
+  {
+    $id_number = test_input($_POST["id_number"]);
+    if (!preg_match("/^[a-zA-Z0-9]*$/",$id_number))
+    {
+      $id_numberErr = "Only letters and numbers allowed (without whitespace)";
+      $correct_input = false;
+    }
+  }
+
+  if (empty($_POST["type"])) 
+  {
+    $correct_input = false;
+    $typeErr = "type is required";
+  }
+  else
+  {
+    $type = test_input($_POST["type"]);
+  }
+
+}
+else
+{
+  $correct_input = false;
+}
+
+if($correct_input)
+{
+  include '../search_into_db.php';
+  include '../insert_to_db.php';
+
+  $result = signin($username,$password);
+
+  if($result === false)
+  {
+    $submitErr = "Wrong username or password, please try again";
+  }
+  else
+  {
+    $_SESSION['login_user'] = $username;
+    $_SESSION['login_password'] = $password;
+    $result = add_employee($username,$password,$name,$surname,$amka,$id_number,$type);
+    if($result)
+      header("Location: employer_success.php");
+    else
+      $submitErr = "Error during registration of employee. Contact us if the error persists";
+    //header( "refresh:5;url=" );
+  }
+}
+
+function test_input($data)
+{
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -8,6 +161,9 @@
 <head>
   <title>IKA - Πληροφορίες για Εργοδότες - Ασφάλιση Εργαζομένου</title>
   <meta charset="utf-8">
+  <style>
+  .error {color: #FF0000;}
+  </style>
   <link rel="stylesheet" href="../../styles/layout.css" type="text/css">
 </head>
 
@@ -64,30 +220,23 @@
               <td align="top" style="float:left;">
                 <b>Στοιχεία Εργοδότη:</b>
                 <table>
-                  <tr>
-                    <td align="right">Όνομα:</td>
-                    <td align="left">
-                      <input type="text" name="first" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right">Επώνυμο:</td>
-                    <td align="left">
-                      <input type="text" name="first" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right">ΑΜΚΑ:</td>
-                    <td align="left">
-                      <input type="text" name="first" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right">Αριθμός Ταυτότητας:</td>
-                    <td align="left">
-                      <input type="text" name="first" />
-                    </td>
-                  </tr>
+                <td align="right">Όνομα Χρήστη:</td>
+            <td align="left">
+              <input type="text" name="username" value="<?php echo $username;?>"/>
+            </td>
+            <td>
+            <span class="error">* <?php echo $usernameErr;?></span>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Κωδικός:</td>
+            <td align="left">
+              <input type="text" name="password" value="<?php echo $password;?>"/>
+            </td>
+            <td>
+            <span class="error">* <?php echo $passwordErr;?></span>
+            </td>
+          </tr>
                 </table>
               </td>
               <td align="top" style="float:right;">
@@ -96,35 +245,45 @@
                   <tr>
                     <td align="right">Όνομα:</td>
                     <td align="left">
-                      <input type="text" name="first" />
+                      <input type="text" name="name" value="<?php echo $name;?>"/>
+                      <span class="error">* <?php echo $nameErr;?></span>
                     </td>
                   </tr>
                   <tr>
                     <td align="right">Επώνυμο:</td>
                     <td align="left">
-                      <input type="text" name="first" />
+                      <input type="text" name="surname" value="<?php echo $surname;?>"/>
+                      <span class="error">* <?php echo $surnameErr;?></span>
                     </td>
                   </tr>
                   <tr>
                     <td align="right">ΑΜΚΑ:</td>
                     <td align="left">
-                      <input type="text" name="first" />
+                      <input type="text" name="amka" value="<?php echo $amka;?>"/>
+                      <span class="error">* <?php echo $amkaErr;?></span>
                     </td>
                   </tr>
                   <tr>
                     <td align="right">Αριθμός Ταυτότητας:</td>
                     <td align="left">
-                      <input type="text" name="first" />
+                      <input type="text" name="id_number" value="<?php echo $id_number;?>"/>
+                      <span class="error">* <?php echo $id_numberErr;?></span>
                     </td>
                   </tr>
                   <tr>
                     <td align="right">Κατηγορία ασφαλισμένου:</td>
                     <td align="left">
                       <div class="clearBoth"></div>
-                      <input type="radio" name="editList" value="0">Οικιακό Προσωπικό
-                      <input type="radio" name="editList" value="1">Οικοδομοτεχνικά Έργα
+                      <input type="radio" name="type" <?php if (isset($type) && $type=="1") echo "checked";?> value="1">Οικιακό Προσωπικό
+                      <input type="radio" name="type" <?php if (isset($type) && $type=="2") echo "checked";?> value="2">Οικοδομοτεχνικά Έργα
                       <div class="clearBoth"></div>
                     </td>
+                  </tr>
+                  <tr>
+                  <td align="right"></td>
+                  <td>
+                  <span class="error">* <?php echo $typeErr;?></span>
+                  </td>
                   </tr>
                   <tr>
                     <td align="left"></td>
@@ -133,11 +292,19 @@
                       <input type="submit" name="submit" value="Υποβολή">
                     </td>
                   </tr>
+                  <tr>
+                <td align="left">
+                  <br>
+                  <br>
+                  <span class="error">* required fields.</span>
+                </td>
+              </tr>
                 </table>
               </td>
             </table>
           </form>
-          <br>
+          <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
+          <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
           <br>
           <p>
             Έχεις κάποιο πρόβλημα ή απορία; Δες τις

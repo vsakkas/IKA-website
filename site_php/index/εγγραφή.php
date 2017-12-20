@@ -137,7 +137,9 @@ if($correct_input)
   {
     $_SESSION['login_user'] = $email;
     $_SESSION['login_password'] = $password;
-    header("Location: ../index.php");
+    //header("Location: ../index.php");
+    $redirect = $_SESSION["previous_page"];
+    header("Location: $redirect");
   }
   else
   {

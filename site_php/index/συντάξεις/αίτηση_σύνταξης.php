@@ -1,6 +1,89 @@
 <?php
    //ob_start();
    session_start();
+   $_SESSION["previous_page"] = getUrl();
+
+function getUrl() {
+  $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
+  $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
+  $url .= $_SERVER["REQUEST_URI"];
+  return $url;
+}
+?>
+<?php
+// define variables and set to empty values
+
+$correct_input = true;
+$usernameErr = $passwordErr = $submitErr = "";
+$username = $password = "";
+if(isset($_SESSION['login_user']))
+{
+  $_POST["username"] = $_SESSION['login_user'];
+  $_POST["password"] = $_SESSION['login_password'];
+  $username = test_input($_POST["username"]);
+  $password = test_input($_POST["password"]);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+  if (empty($_POST["username"]))
+  {
+    $usernameErr = "a username is required";
+    $correct_input = false;
+  }
+  else
+  {
+    $username = test_input($_POST["username"]);
+  }
+
+  if (empty($_POST["password"]))
+  {
+    $passwordErr = "a password is required";
+    $correct_input = false;
+  }
+  else
+  {
+    $password = test_input($_POST["password"]);
+  }
+
+}
+else
+{
+  $correct_input = false;
+}
+
+if($correct_input)
+{
+  include '../search_into_db.php';
+  include '../insert_to_db.php';
+
+  $result = signin($username,$password);
+
+  if($result === false)
+  {
+    $submitErr = "Wrong username or password, please try again";
+  }
+  else
+  {
+    $_SESSION['login_user'] = $username;
+    $_SESSION['login_password'] = $password;
+    $result = add_pension($username,$password);
+    if($result)
+      header("Location: pension_success.php");
+    else
+    $submitErr = "Error during your pension request. Contact us if the error persists";
+    //header( "refresh:5;url=" );
+  }
+}
+
+function test_input($data)
+{
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -8,6 +91,9 @@
 <head>
   <title>IKA - Πληροφορίες για Συνταξιούχους - Αίτηση Συνταξιοδότησης</title>
   <meta charset="utf-8">
+  <style>
+  .error {color: #FF0000;}
+  </style>
   <link rel="stylesheet" href="../../styles/layout.css" type="text/css">
 </head>
 
@@ -62,53 +148,46 @@
         <div class="container_form">
           <form method="post" action="">
             <table>
-              <tr>
-                <td align="right">Όνομα:</td>
-                <td align="left">
-                  <input type="text" name="first" />
-                </td>
-              </tr>
-              <tr>
-                <td align="right">Επώνυμο:</td>
-                <td align="left">
-                  <input type="text" name="first" />
-                </td>
-              </tr>
-              <tr>
-                <td align="right">E-Mail:</td>
-                <td align="left">
-                  <input type="text" name="first" />
-                </td>
-              </tr>
-              <tr>
-                <td align="right">Κωδικός:</td>
-                <td align="left">
-                  <input type="text" name="last" />
-                </td>
-              </tr>
-              <tr>
-                <td align="right">ΑΜΚΑ:</td>
-                <td align="left">
-                  <input type="text" name="first" />
-                </td>
-              </tr>
-              <tr>
-                <td align="right">Αριθμός Ταυτότητας:</td>
-                <td align="left">
-                  <input type="text" name="first" />
-                </td>
-              </tr>
+            <tr>
+            <td align="right">Όνομα Χρήστη:</td>
+            <td align="left">
+              <input type="text" name="username" value="<?php echo $username;?>"/>
+            </td>
+            <td>
+              <span class="error">* <?php echo $usernameErr;?></span>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Κωδικός:</td>
+            <td align="left">
+              <input type="text" name="password" value="<?php echo $password;?>"/>
+            </td>
+            <td>
+              <span class="error">* <?php echo $passwordErr;?></span>
+            </td>
+          </tr>
               <tr>
                 <td align="left"></td>
                 <td align="right">
                   <br>
                   <input type="submit" name="submit" value="Υποβολή">
                 </td>
+                <td>
+                  <span class="error"> <?php echo $submitErr;?></span>
+                </td>
+              </tr>
+              <tr>
+                <td align="left">
+                  <br>
+                  <br>
+                  <span class="error">* required fields.</span>
+                </td>
               </tr>
             </table>
 
           </form>
-          <br>
+          <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
+          <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
           <br>
           <p>
             Έχεις κάποιο πρόβλημα ή απορία; Δες τις
