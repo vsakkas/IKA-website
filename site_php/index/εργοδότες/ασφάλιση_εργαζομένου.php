@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }
   }
 
-  if (empty($_POST["type"])) 
+  if (empty($_POST["type"]))
   {
     $correct_input = false;
     $typeErr = "type is required";
@@ -231,12 +231,23 @@ function test_input($data)
           <tr>
             <td align="right">Κωδικός:</td>
             <td align="left">
-              <input type="text" name="password" value="<?php echo $password;?>"/>
+              <input type="password" name="password" value="<?php echo $password;?>"/>
             </td>
             <td>
             <span class="error">* <?php echo $passwordErr;?></span>
             </td>
           </tr>
+          <td align="left">
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+                  <br>
+                  <br>
+                  <span class="error">* Υποχρεωτικά πεδία</span>
+                </td>
+              </tr>
                 </table>
               </td>
               <td align="top" style="float:right;">
@@ -293,16 +304,12 @@ function test_input($data)
                     </td>
                   </tr>
                   <tr>
-                <td align="left">
-                  <br>
-                  <br>
-                  <span class="error">* required fields.</span>
-                </td>
-              </tr>
                 </table>
               </td>
             </table>
           </form>
+          <br>
+          <br>
           <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
           <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
           <br>
@@ -311,10 +318,6 @@ function test_input($data)
             <a class="text-link" href="../page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="../page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
-          <br>
-          <br>
-          <br>
-          <br>
           <br>
           <br>
           <br>

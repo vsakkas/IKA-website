@@ -97,8 +97,8 @@ function getUrl() {
           <br>
           <p>
             Έχεις κάποιο πρόβλημα ή απορία; Δες τις
-            <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
-            <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
+            <a class="text-link" href="../page_not_found.php">Συχνές Ερωτήσεις</a> ή
+            <a class="text-link" href="../page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
           <br>
           <br>

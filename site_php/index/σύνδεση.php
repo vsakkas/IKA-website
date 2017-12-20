@@ -130,6 +130,15 @@ function test_input($data)
           <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <table>
               <tr>
+                Συνδέσου τώρα στον Ατομικό Λογαριασμό Ασφάλισης για άμεση και εύκολη πρόσβαση
+                στα δεδομένα του λογαριασμού σου, ανανέωση και επεξεργασία των προσωπικών στοιχείων
+                σου και γρήγορη πρόσβαση στις υπηρεσίες του ΙΚΑ.
+              </tr>
+              <br>
+              <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
+          <a class="text-link" href="εγγραφή.php">Εγγραφή</a> τώρα.</p>
+              <br>
+              <tr>
                 <td align="right">Όνομα Χρήστη:</td>
                 <td align="left">
                   <input type="text" name="username" value="<?php echo $username;?>"/>
@@ -141,7 +150,7 @@ function test_input($data)
               <tr>
                 <td align="right">Κωδικός:</td>
                 <td align="left">
-                  <input type="text" name="password" value="<?php echo $password;?>"/>
+                  <input type="password" name="password" value="<?php echo $password;?>"/>
                 </td>
                 <td>
                   <span class="error">* <?php echo $passwordErr;?></span>
@@ -161,16 +170,12 @@ function test_input($data)
               </tr>
               <tr>
                 <td align="left">
-                  <br>
-                  <br>
-                  <span class="error">* required fields.</span>
+                  <span class="error">* Υποχρεωτικά πεδία</span>
                 </td>
               </tr>
             </table>
           </form>
         </div>
-        <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
-          <a class="text-link" href="εγγραφή.php">Εγγραφή</a> τώρα.</p>
         <br>
         <br>
         <p>
@@ -178,10 +183,6 @@ function test_input($data)
           <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
           <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
         </p>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <br>

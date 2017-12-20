@@ -18,7 +18,7 @@ $correct_input = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
    $correct_input = true;
-   if (empty($_POST["type"])) 
+   if (empty($_POST["type"]))
    {
      $correct_input = false;
      $typeErr = "type is required";
@@ -129,7 +129,7 @@ function test_input($data)
                 <td align="right">Κατηγορία ασφαλισμένου:</td>
                 <td align="left">
                   <select name="type">
-                    <option disabled selected value>select an option</option>
+                    <option disabled selected value>Επιλέξτε Κατηγορία</option>
                     <option value="1"<?php if (isset($type) && $type=="1") echo "selected=\"selected\"";?>>Πολιτικοί Υπάλληλοι Δημοσίου, Ν.Π.Δ.Δ., Ο.Τ.Α., Εκπαιδευτικοί Ιερείς</option>
                     <option value="2"<?php if (isset($type) && $type=="2") echo "selected=\"selected\"";?>>Μέλη Δ.Ε.Π. - Α.Ε.Ι. Πλήρους Απασχόλησης, Μέλη Ε.Ε.ΔΙ.Π. - Α.Ε.Ι.</option>
                     <option value="3"<?php if (isset($type) && $type=="3") echo "selected=\"selected\"";?>>Μέλη Ε.Π. - Τ.Ε.Ι. - Μέλη Ε.ΔΙ.Π</option>
@@ -165,7 +165,7 @@ function test_input($data)
                 <td align="left">
                   <br>
                   <br>
-                  <span class="error">* required fields.</span>
+                  <span class="error">* Υποχρεωτικά πεδία</span>
                 </td>
               </tr>
             </table>
@@ -177,8 +177,6 @@ function test_input($data)
             <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
-          <br>
-          <br>
           <br>
           <br>
           <br>

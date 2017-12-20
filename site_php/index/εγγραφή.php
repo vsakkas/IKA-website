@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }
   }
 
-  if (empty($_POST["type"])) 
+  if (empty($_POST["type"]))
   {
     $correct_input = false;
     $typeErr = "type is required";
@@ -218,6 +218,13 @@ function test_input($data)
           <form method="post" action="">
             <table>
               <tr>
+              Δημιούργησε τώρα έναν Ατομικό Λογαριασμό Ασφάλισης για εύκολη αποθήκευση, ανανέωση και
+              χρήση των στοιχείων σου, καθώς και για να διευκολύνεις την χρήση των υπηρεσιών του ΙΚΑ.
+              Για δημιουργία του λογαριασμού, συμπλήρωσε τα παρακάτω στοιχεία:
+              </tr>
+              <br>
+              <br>
+              <tr>
                 <td align="right">Όνομα:</td>
                 <td align="left">
                   <input type="text" name="name" value="<?php echo $name;?>"/>
@@ -241,14 +248,14 @@ function test_input($data)
               <tr>
                 <td align="right">Κωδικός:</td>
                 <td align="left">
-                  <input type="text" name="password" value="<?php echo $password;?>"/>
+                  <input type="password" name="password" value="<?php echo $password;?>"/>
                   <span class="error">* <?php echo $passwordErr;?></span>
                 </td>
               </tr>
               <tr>
                 <td align="right">Επιβεβαίωση Κωδικού:</td>
                 <td align="left">
-                  <input type="text" name="verify_password" value="<?php echo $verify_password;?>"/>
+                  <input type="password" name="verify_password" value="<?php echo $verify_password;?>"/>
                   <span class="error">* <?php echo $verify_passwordErr;?></span>
                 </td>
               </tr>
@@ -270,7 +277,7 @@ function test_input($data)
                   <td align="right">Κατηγορία:</td>
                 <td align="left">
                   <select name="type">
-                    <option disabled selected value>select an option</option>
+                    <option disabled selected value>Επιλέξτε Κατηγορία</option>
                     <option value="1"<?php if (isset($type) && $type=="1") echo "selected=\"selected\"";?>>Συνταξιούχος</option>
                     <option value="2"<?php if (isset($type) && $type=="2") echo "selected=\"selected\"";?>>Εργοδότης</option>
                     <option value="3"<?php if (isset($type) && $type=="3") echo "selected=\"selected\"";?>>Εργαζόμενος</option>
@@ -291,9 +298,7 @@ function test_input($data)
               </tr>
               <tr>
                 <td align="left">
-                  <br>
-                  <br>
-                  <span class="error">* required fields.</span>
+                  <span class="error">* Υποχρεωτικά πεδία</span>
                 </td>
               </tr>
             </table>
@@ -305,10 +310,6 @@ function test_input($data)
             <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
-          <br>
-          <br>
-          <br>
-          <br>
           <br>
           <br>
         </div>

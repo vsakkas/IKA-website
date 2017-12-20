@@ -160,7 +160,7 @@ function test_input($data)
           <tr>
             <td align="right">Κωδικός:</td>
             <td align="left">
-              <input type="text" name="password" value="<?php echo $password;?>"/>
+              <input type="password" name="password" value="<?php echo $password;?>"/>
             </td>
             <td>
               <span class="error">* <?php echo $passwordErr;?></span>
@@ -180,7 +180,7 @@ function test_input($data)
                 <td align="left">
                   <br>
                   <br>
-                  <span class="error">* required fields.</span>
+                  <span class="error">* Υποχρεωτικά πεδία</span>
                 </td>
               </tr>
             </table>
