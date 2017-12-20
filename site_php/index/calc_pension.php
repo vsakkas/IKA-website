@@ -5,12 +5,12 @@ function calcpension($years)
     if($credits >= 550)
     {
         $result = $credits * 0.7;
-        return "You can now be a pensioner with $result per month";
+        return "Το προσεγγιστικό ποσό σύνταξης είναι <b>$result</b> ανά μήνα.";
     }
     else
     {
         $result = ceil((550 - $credits) / 36);
-        return "You don't have enough credits for a pension. You need $result years of work";
+        return "Δεν διαθέτεις αρκετά χρόνια εργασίας. Απαιτούνται ακόμη <b>$result</b> χρόνια εργασίας.";
     }
 }
 ?>

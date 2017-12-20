@@ -68,7 +68,6 @@ header( "refresh:5;url=../../index.php" );
       <div class="title">
         <a class="title-link" href="../πληροφορίες_για_συνταξιούχους.php">Πληροφορίες για Συνταξιούχους</a> / Αίτηση Συνταξιοδότησης</div>
       <!-- content body -->
-      <!-- content body -->
       <div id="homepage">
         <div class="container_form">
           <br>

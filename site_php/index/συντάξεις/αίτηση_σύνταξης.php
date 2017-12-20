@@ -61,7 +61,7 @@ if($correct_input)
 
   if($result === false)
   {
-    $submitErr = "Wrong username or password, please try again";
+    $submitErr = "Λάθος όνομα χρήστη ή κωδικός. Παρακαλώ, δοκιμάστε παλι.";
   }
   else
   {
@@ -71,7 +71,7 @@ if($correct_input)
     if($result)
       header("Location: pension_success.php");
     else
-    $submitErr = "Error during your pension request. Contact us if the error persists";
+    $submitErr = "Εμφανίστηκε κάποιο πρόβλημα κατά την επεξεργασία της αιτήσης σας. Επικοινωνήστε μαζί μας εάν ξανασυμβεί.";
     //header( "refresh:5;url=" );
   }
 }
