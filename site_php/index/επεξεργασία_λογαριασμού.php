@@ -135,7 +135,8 @@ if($correct_input)
     $_SESSION['login_user'] = $email;
     $_SESSION['login_password'] = $password;
     $_SESSION['type_user'] = NULL;
-    header("Location: ../index.php");
+    $_SESSION['message_user'] = "Η αλλαγή των στοιχείων σου έγινε με επιτυχία. Θα ανακατευθυνθείς σύντομα.";
+    header("Location: generic_success.php");
   }
   else
   {

@@ -21,7 +21,7 @@ else if($type == "4")
   $type = "ΑΜΕΑ";
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-  header("Location: λογαριασμός.php");
+  header("Location: επεξεργασία_λογαριασμού.php");
 }
 ?>
 <!DOCTYPE html>
