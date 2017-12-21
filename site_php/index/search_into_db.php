@@ -40,4 +40,24 @@ function exists($name,$surname,$amka,$id_number)
 		return false;
 	}
 }
+function all_info(&$email,&$password,&$name,&$surname,&$amka,&$id_number,&$type)
+{
+    $conn = OpenCon();
+    $stmt = $conn->prepare("SELECT * FROM users WHERE (email=? AND password=?)");
+    $stmt->bind_param("ss",$email,$password);
+    $stmt->execute();
+    $stmt->bind_result($email,$password,$name,$surname,$amka,$type,$id_number);
+    $result = $stmt->fetch();
+    $stmt->close();
+
+	if($result)
+	{
+        CloseCon($conn);
+		return $result;
+	}
+	else
+	{
+		return false;
+	}
+}
 ?>

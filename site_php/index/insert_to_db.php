@@ -27,6 +27,7 @@ function update($email,$password,$name,$surname,$amka,$type,$id_number,$old_emai
 	CloseCon($conn);
 	if(!$result)
 		return false;
+	$conn = OpenCon();
     $stmt = $conn->prepare("INSERT INTO users(email,password,name,surname,amka,type,id_number) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssss",$email,$password,$name,$surname,$amka,$type,$id_number);
     $result = $stmt->execute();

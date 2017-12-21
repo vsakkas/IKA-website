@@ -137,9 +137,8 @@ if($correct_input)
   {
     $_SESSION['login_user'] = $email;
     $_SESSION['login_password'] = $password;
-    //header("Location: ../index.php");
-    $redirect = $_SESSION["previous_page"];
-    header("Location: $redirect");
+    $_SESSION['message_user'] = "Η εγγραφή σου έγινε με επιτυχία. Θα ανακατευθυνθείς σύντομα.";
+    header("Location: generic_success.php");
   }
   else
   {

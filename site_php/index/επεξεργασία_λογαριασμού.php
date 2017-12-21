@@ -7,7 +7,6 @@
 $correct_input = false;
 $nameErr = $surnameErr = $emailErr = $passwordErr = $verify_passwordErr = $amkaErr = $id_numberErr = $typeErr = $submitErr = "";
 $name = $surname = $email = $password = $verify_password = $amka = $id_number = $type = "";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
   $correct_input = true;
@@ -111,19 +110,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }
   }
 
-  if (empty($_POST["type"]))
-  {
-    $correct_input = false;
-    $typeErr = "type is required";
-  }
-  else
-  {
-    $type = test_input($_POST["type"]);
-  }
-
 }
 else
 {
+  include 'search_into_db.php';
+  $email = $_SESSION['login_user'];
+  $password = $_SESSION['login_password'];
+  all_info($email,$password,$name,$surname,$amka,$id_number,$type);
+  $_SESSION['type_user'] = $type;
+  $verify_password = $password;
   $correct_input = false;
 }
 
@@ -131,12 +126,15 @@ if($correct_input)
 {
   include 'insert_to_db.php';
 
-  $result = signup($email,$password,$name,$surname,$amka,$type,$id_number);
+  $old_email = $_SESSION['login_user'];
+  $type = $_SESSION['type_user'];
+  $result = update($email,$password,$name,$surname,$amka,$type,$id_number,$old_email);
 
   if($result === true)
   {
     $_SESSION['login_user'] = $email;
     $_SESSION['login_password'] = $password;
+    $_SESSION['type_user'] = NULL;
     header("Location: ../index.php");
   }
   else

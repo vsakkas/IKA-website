@@ -72,7 +72,7 @@ header( "refresh:5;url=../../index.php" );
         <div class="container_form">
           <br>
           <br>
-          <span style="background-color: #FFFF00">Your request was submitted succesfully. You will be redirected shortly.</span>
+          <span style="background-color: #FFFF00">Το αίτημα σου ολοκληρώθηκε με επιτυχία. Θα ανακατευθυνθείς σύντομα.</span>
           <br>
           <br>
           <p>

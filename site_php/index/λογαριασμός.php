@@ -7,151 +7,21 @@
 $correct_input = false;
 $nameErr = $surnameErr = $emailErr = $passwordErr = $verify_passwordErr = $amkaErr = $id_numberErr = $typeErr = $submitErr = "";
 $name = $surname = $email = $password = $verify_password = $amka = $id_number = $type = "";
-
+include 'search_into_db.php';
+$email = $_SESSION['login_user'];
+$password = $_SESSION['login_password'];
+all_info($email,$password,$name,$surname,$amka,$id_number,$type);
+if($type == "1")
+  $type = "Συνταξιούχος";    
+else if($type == "2")
+  $type = "Εργοδότης";
+else if($type == "3")
+  $type = "Εργαζόμενος";
+else if($type == "4")
+  $type = "ΑΜΕΑ";
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-  $correct_input = true;
-  if (empty($_POST["name"]))
-  {
-    $nameErr = "a name is required";
-    $correct_input = false;
-  }
-  else
-  {
-    $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z ]*$/",$name))
-    {
-      $nameErr = "Only letters and white space allowed";
-      $correct_input = false;
-    }
-  }
-
-  if (empty($_POST["surname"]))
-  {
-    $surnameErr = "a surname is required";
-    $correct_input = false;
-  }
-  else
-  {
-    $surname = test_input($_POST["surname"]);
-    if (!preg_match("/^[a-zA-Z ]*$/",$surname))
-    {
-      $nameErr = "Only letters and white space allowed";
-      $correct_input = false;
-    }
-  }
-
-  if (empty($_POST["email"]))
-  {
-    $emailErr = "an email is required";
-    $correct_input = false;
-  }
-  else
-  {
-    $email = test_input($_POST["email"]);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
-      $correct_input = false;
-      $emailErr = "Invalid email format";
-    }
-  }
-
-  if (empty($_POST["password"]))
-  {
-    $passwordErr = "a password is required";
-    $correct_input = false;
-  }
-  else
-  {
-    $password = test_input($_POST["password"]);
-  }
-
-  if (empty($_POST["verify_password"]))
-  {
-    $verify_passwordErr = "a verification password is required";
-    $correct_input = false;
-  }
-  else
-  {
-    $verify_password = test_input($_POST["verify_password"]);
-    if($verify_password !== $password)
-    {
-      $verify_passwordErr = "passwords don't match";
-      $correct_input = false;
-    }
-  }
-
-  if (empty($_POST["amka"]))
-  {
-    $amkaErr = "amka is required";
-    $correct_input = false;
-  }
-  else
-  {
-    $amka = test_input($_POST["amka"]);
-    if (!preg_match("/^[0-9]*$/",$amka))
-    {
-      $amkaErr = "Only numbers allowed (without whitespace)";
-      $correct_input = false;
-    }
-  }
-
-  if (empty($_POST["id_number"]))
-  {
-    $id_numberErr = "an id_number is required";
-    $correct_input = false;
-  }
-  else
-  {
-    $id_number = test_input($_POST["id_number"]);
-    if (!preg_match("/^[a-zA-Z0-9]*$/",$id_number))
-    {
-      $id_numberErr = "Only letters and numbers allowed (without whitespace)";
-      $correct_input = false;
-    }
-  }
-
-  if (empty($_POST["type"]))
-  {
-    $correct_input = false;
-    $typeErr = "type is required";
-  }
-  else
-  {
-    $type = test_input($_POST["type"]);
-  }
-
-}
-else
-{
-  $correct_input = false;
-}
-
-if($correct_input)
-{
-  include 'insert_to_db.php';
-
-  $result = signup($email,$password,$name,$surname,$amka,$type,$id_number);
-
-  if($result === true)
-  {
-    $_SESSION['login_user'] = $email;
-    $_SESSION['login_password'] = $password;
-    header("Location: ../index.php");
-  }
-  else
-  {
-    $submitErr = "Sign up error";
-  }
-
-}
-
-function test_input($data)
-{
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+  header("Location: επεξεργασία_λογαριασμού.php");
 }
 ?>
 <!DOCTYPE html>
@@ -248,7 +118,7 @@ function test_input($data)
               <tr>
                   <td align="right">Κατηγορία:</td>
                 <td align="left">
-                  <input type="text" name=type value="<?php echo $id_number;?>" readonly />
+                  <input type="text" name=type value="<?php echo $type;?>" readonly />
                 </td>
               </tr>
               <tr>

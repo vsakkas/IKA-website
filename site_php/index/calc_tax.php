@@ -1,6 +1,7 @@
 <?php
-function calctax()
+function calctax(&$ergosimo,&$tax,$payment)
 {
-    return rand(200,500);
+    $ergosimo = round($payment * 1.333);
+    $tax = round($ergosimo * 0.25);
 }
 ?>
