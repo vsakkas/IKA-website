@@ -21,7 +21,7 @@ else if($type == "4")
   $type = "ΑΜΕΑ";
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-  header("Location: επεξεργασία_λογαριασμού.php");
+  header("Location: λογαριασμός.php");
 }
 ?>
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"επεξεργασία_λογαριασμού.php\">$temp</a></li><li class=\"last\"><a href=\"logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
@@ -116,12 +116,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 </td>
               </tr>
               <tr>
-                  <td align="right">Κατηγορία:</td>
-                <td align="left">
-                  <input type="text" name=type value="<?php echo $type;?>" readonly />
-                </td>
-              </tr>
-              <tr>
                 <td align="left"></td>
                 <td align="right">
                   <br>
@@ -140,6 +134,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
+          <br>
+          <br>
           <br>
           <br>
           <br>

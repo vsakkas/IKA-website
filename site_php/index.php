@@ -48,7 +48,7 @@
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"index/επεξεργασία_λογαριασμού.php\">$temp</a></li><li class=\"last\"><a href=\"index/logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"index/λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"index/logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
