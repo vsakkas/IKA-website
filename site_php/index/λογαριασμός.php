@@ -12,7 +12,7 @@ $email = $_SESSION['login_user'];
 $password = $_SESSION['login_password'];
 all_info($email,$password,$name,$surname,$amka,$id_number,$type);
 if($type == "1")
-  $type = "Συνταξιούχος";    
+  $type = "Συνταξιούχος";
 else if($type == "2")
   $type = "Εργοδότης";
 else if($type == "3")
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"επεξεργασία_λογαριασμού.php\">$temp</a></li><li class=\"last\"><a href=\"logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {

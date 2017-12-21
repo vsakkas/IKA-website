@@ -2,7 +2,7 @@
    //ob_start();
    session_start();
    $_SESSION["previous_page"] = getUrl();
-   
+
    function getUrl() {
      $url  = @( $_SERVER["HTTPS"] != 'on' ) ? 'http://'.$_SERVER["SERVER_NAME"] :  'https://'.$_SERVER["SERVER_NAME"];
      $url .= ( $_SERVER["SERVER_PORT"] !== 80 ) ? ":".$_SERVER["SERVER_PORT"] : "";
@@ -48,7 +48,7 @@
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"index/page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"index/logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"index/επεξεργασία_λογαριασμού.php\">$temp</a></li><li class=\"last\"><a href=\"index/logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {

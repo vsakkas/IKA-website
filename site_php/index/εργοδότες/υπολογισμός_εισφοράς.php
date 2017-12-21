@@ -107,7 +107,7 @@ function test_input($data)
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"../page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"../logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"../επεξεργασία_λογαριασμού.php\">$temp</a></li><li class=\"last\"><a href=\"../logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
@@ -138,14 +138,12 @@ function test_input($data)
                   <input type="radio" name="type" <?php if (isset($type) && $type=="1") echo "checked";?> value="1">Οικιακό Προσωπικό
                   <input type="radio" name="type" <?php if (isset($type) && $type=="2") echo "checked";?> value="2">Οικοδομοτεχνικά Έργα
                   <div class="clearBoth"></div>
-                </td>
-              </tr>
-              <tr>
                   <td align="right"></td>
                   <td>
                   <span class="error">* <?php echo $typeErr;?></span>
                   </td>
-                  </tr>
+                </td>
+              </tr>
               <tr>
                 <td align="right">Καθαρό ποσό αμοιβής εργαζομένου:</td>
                 <td align="left">
@@ -168,8 +166,6 @@ function test_input($data)
               </tr>
               <tr>
                 <td align="left">
-                  <br>
-                  <br>
                   <span class="error">* Υποχρεωτικά πεδία</span>
                 </td>
               </tr>
@@ -182,8 +178,6 @@ function test_input($data)
             <a class="text-link" href="../page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="../page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
-          <br>
-          <br>
           <br>
           <br>
           <br>

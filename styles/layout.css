@@ -121,6 +121,7 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 
 #footer{padding:20px 0;}
 #footer p{margin:0; padding:0;}
+#footer p a:hover{color:#ECECEC;}
 .footer-link{}
 
 /*--------------------Additional--------------------*/

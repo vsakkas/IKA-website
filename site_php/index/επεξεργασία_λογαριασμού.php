@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   $correct_input = true;
   if (empty($_POST["name"]))
   {
-    $nameErr = "a name is required";
+    $nameErr = "Απαιτείται η συμπλήρωση ονόματος!";
     $correct_input = false;
   }
   else
@@ -20,14 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $name = test_input($_POST["name"]);
     if (!preg_match("/^[a-zA-Z ]*$/",$name))
     {
-      $nameErr = "Only letters and white space allowed";
+      $nameErr = "Μόνο γράμματα και το κενό διάστημα επιτρέπονται!";
       $correct_input = false;
     }
   }
 
   if (empty($_POST["surname"]))
   {
-    $surnameErr = "a surname is required";
+    $surnameErr = "Απαιτείται η συμπλήρωση του επιθέτου!";
     $correct_input = false;
   }
   else
@@ -35,14 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $surname = test_input($_POST["surname"]);
     if (!preg_match("/^[a-zA-Z ]*$/",$surname))
     {
-      $nameErr = "Only letters and white space allowed";
+      $nameErr = "Μόνο γράμματα και το κενό διάστημα επιτρέπονται!";
       $correct_input = false;
     }
   }
 
   if (empty($_POST["email"]))
   {
-    $emailErr = "an email is required";
+    $emailErr = "Απαιτείται η συμπλήρωση του E-Mail!";
     $correct_input = false;
   }
   else
@@ -51,13 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
       $correct_input = false;
-      $emailErr = "Invalid email format";
+      $emailErr = "Μη έγκυρη μορφή E-Mail!";
     }
   }
 
   if (empty($_POST["password"]))
   {
-    $passwordErr = "a password is required";
+    $passwordErr = "Απαιτείται η συμπλήρωση του κωδικού!";
     $correct_input = false;
   }
   else
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
   if (empty($_POST["verify_password"]))
   {
-    $verify_passwordErr = "a verification password is required";
+    $verify_passwordErr = "Απαιτείται επιβεβαίωση κωδικού!";
     $correct_input = false;
   }
   else
@@ -75,14 +75,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $verify_password = test_input($_POST["verify_password"]);
     if($verify_password !== $password)
     {
-      $verify_passwordErr = "passwords don't match";
+      $verify_passwordErr = "Οι κωδικοί δεν ταιριάζουν!";
       $correct_input = false;
     }
   }
 
   if (empty($_POST["amka"]))
   {
-    $amkaErr = "amka is required";
+    $amkaErr = "Απαιτείται η συμπλήρωση ΑΜΚΑ!";
     $correct_input = false;
   }
   else
@@ -90,14 +90,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $amka = test_input($_POST["amka"]);
     if (!preg_match("/^[0-9]*$/",$amka))
     {
-      $amkaErr = "Only numbers allowed (without whitespace)";
+      $amkaErr = "Μόνο αριθμοί επιτρέπονται!";
       $correct_input = false;
     }
   }
 
   if (empty($_POST["id_number"]))
   {
-    $id_numberErr = "an id_number is required";
+    $id_numberErr = "Απαιτείται η συμπλήρωση του Αριθμού Ταυτότητας!";
     $correct_input = false;
   }
   else
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $id_number = test_input($_POST["id_number"]);
     if (!preg_match("/^[a-zA-Z0-9]*$/",$id_number))
     {
-      $id_numberErr = "Only letters and numbers allowed (without whitespace)";
+      $id_numberErr = "Μόνο γράμματα και αριθμοί επιτρέπονται!";
       $correct_input = false;
     }
   }
@@ -193,7 +193,7 @@ function test_input($data)
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"επεξεργασία_λογαριασμού.php\">$temp</a></li><li class=\"last\"><a href=\"logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
@@ -274,9 +274,7 @@ function test_input($data)
               </tr>
               <tr>
                 <td align="left">
-                  <br>
-                  <br>
-                  <span class="error">* required fields.</span>
+                  <span class="error">* Υποχρεωτικά πεδία</span>
                 </td>
               </tr>
             </table>
@@ -288,6 +286,7 @@ function test_input($data)
             <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
+          <br>
           <br>
           <br>
           <br>

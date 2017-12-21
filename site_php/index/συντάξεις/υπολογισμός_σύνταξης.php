@@ -104,7 +104,7 @@ function test_input($data)
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"../page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"../logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"../επεξεργασία_λογαριασμού.php\">$temp</a></li><li class=\"last\"><a href=\"../logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
@@ -168,8 +168,6 @@ function test_input($data)
               </tr>
               <tr>
                 <td align="left">
-                  <br>
-                  <br>
                   <span class="error">* Υποχρεωτικά πεδία</span>
                 </td>
               </tr>
@@ -182,6 +180,8 @@ function test_input($data)
             <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
+          <br>
+          <br>
           <br>
           <br>
           <br>
