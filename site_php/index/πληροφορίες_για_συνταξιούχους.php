@@ -71,7 +71,7 @@ function getUrl() {
             <div class="container_image">
               <img src="../images/520x215_δικαιολογητικά.png" width="520" height="215" alt="">
               <div class="top-right">
-                <a href="page_not_found.php">Δικαιολογητικά</a>
+                <a href="συντάξεις/βεβαίωση.php">Δικαιολογητικά</a>
               </div>
             </div>
           </article>
