@@ -69,17 +69,17 @@ function getUrl() {
         <section id="latest" class="clear">
           <article class="two_quarter">
             <div class="container_image">
-              <img src="../images/520x215_εγγραφή_ως_εργοδότης.png" width="520" height="215" alt="">
+              <img src="../images/520x215_ασφάλιση_εργαζομένου.png" width="520" height="215" alt="">
               <div class="top-right">
-                <a href="page_not_found.php">Εγγραφή ως Εργοδότης</a>
+                <a href="εργοδότες/ασφάλιση_εργαζομένου.php">Ασφάλιση Εργαζομένου</a>
               </div>
             </div>
           </article>
           <article class="two_quarter lastbox">
             <div class="container_image">
-              <img src="../images/520x215_ασφάλιση_εργαζομένου.png" width="520" height="215" alt="">
+              <img src="../images/520x215_δικαιολογητικά.png" width="520" height="215" alt="">
               <div class="top-right">
-                <a href="εργοδότες/ασφάλιση_εργαζομένου.php">Ασφάλιση Εργαζομένου</a>
+                <a href="εργοδότες/υπάλληλοι.php">Εμφάνιση Στοιχείων Εργαζομένων</a>
               </div>
             </div>
           </article>

@@ -60,7 +60,7 @@ if($correct_input)
 
   if($result === false)
   {
-    $submitErr = "Wrong username or password, please try again";
+    $submitErr = "Λάθος όνομα χρήστη ή κωδικός. Παρακαλώ, δοκιμάστε πάλι.";
   }
   else
   {
@@ -198,6 +198,8 @@ function test_input($data)
             <a class="text-link" href="../page_not_found.php">Συχνές Ερωτήσεις</a> ή
             <a class="text-link" href="../page_not_found.php">Επικοινώνησε</a> μαζί μας.
           </p>
+          <br>
+          <br>
           <br>
           <br>
           <br>

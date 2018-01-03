@@ -131,7 +131,7 @@ if($correct_input)
 
   if($result === false)
   {
-    $submitErr = "Wrong username or password, please try again";
+    $submitErr = "Λάθος όνομα χρήστη ή κωδικός. Παρακαλώ, δοκιμάστε πάλι.";
   }
   else
   {
