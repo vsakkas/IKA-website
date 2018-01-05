@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   else
   {
     $name = test_input($_POST["name"]);
-    if (!preg_match("/^[a-zA-Z ]*$/",$name))
+    if (!preg_match("/^[A-Za-zα-ωΑ-Ω ίϊΐόάέύϋΰήώΆΈΉΊΌΎΏ-]+$/u",$name))
     {
       $nameErr = "Μόνο γράμματα και το κενό διάστημα επιτρέπονται!";
       $correct_input = false;
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   else
   {
     $surname = test_input($_POST["surname"]);
-    if (!preg_match("/^[a-zA-Z ]*$/",$surname))
+    if (!preg_match("/^[A-Za-zα-ωΑ-Ω ίϊΐόάέύϋΰήώΆΈΉΊΌΎΏ-]+$/u",$surname))
     {
       $nameErr = "Μόνο γράμματα και το κενό διάστημα επιτρέπονται!";
       $correct_input = false;
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $amka = test_input($_POST["amka"]);
     if (!preg_match("/^[0-9]*$/",$amka))
     {
-      $amkaErr = "Μόνο γράμματα επιτρέπονται!";
+      $amkaErr = "Μόνο αριθμοί επιτρέπονται!";
       $correct_input = false;
     }
   }
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   else
   {
     $id_number = test_input($_POST["id_number"]);
-    if (!preg_match("/^[a-zA-Z0-9]*$/",$id_number))
+    if (!preg_match("/^[A-Za-zα-ωΑ-Ω0-9]*$/",$id_number))
     {
       $id_numberErr = "Μόνο γράμματα και αριθμοί επιτρέπονται!";
       $correct_input = false;
