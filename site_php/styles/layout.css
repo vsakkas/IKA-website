@@ -121,6 +121,7 @@ input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif
 
 #footer{padding:20px 0;}
 #footer p{margin:0; padding:0;}
+#footer p a:hover{color:#ECECEC;}
 .footer-link{}
 
 /*--------------------Additional--------------------*/
@@ -143,6 +144,9 @@ input[type="text"]{font-size:13px;}
 input[type="submit"] {padding: 15px; font-size:15px; color:#ECECEC; background-color:#0074D9; border:none;}
 input[type="submit"]:hover{color:#ECECEC; background-color:#0763B4;}
 input[type="submit"]:active{color:#FF851B;}
+input[type="button"] {padding: 15px; font-size:15px; color:#ECECEC; background-color:#0074D9; border:none;}
+input[type="button"]:hover{color:#ECECEC; background-color:#0763B4;}
+input[type="button"]:active{color:#FF851B;}
 
 select[type="text"]{font-size:15px;}
 
