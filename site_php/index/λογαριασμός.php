@@ -7,7 +7,7 @@
 $correct_input = false;
 $nameErr = $surnameErr = $emailErr = $passwordErr = $verify_passwordErr = $amkaErr = $id_numberErr = $typeErr = $submitErr = "";
 $name = $surname = $email = $password = $verify_password = $amka = $id_number = $type = "";
-include 'search_into_db.php';
+include '../php/search_into_db.php';
 $email = $_SESSION['login_user'];
 $password = $_SESSION['login_password'];
 all_info($email,$password,$name,$surname,$amka,$id_number,$type);
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"../php/logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
@@ -113,6 +113,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 <td align="right">Αριθμός Ταυτότητας:</td>
                 <td align="left">
                   <input type="text" name="id_number" value="<?php echo $id_number;?>" readonly />
+                </td>
+              </tr>
+              <tr>
+                <td align="right">Ιδιότητα:</td>
+                <td align="left">
+                  <input type="text" name="type" value="<?php echo $type;?>" readonly />
                 </td>
               </tr>
               <tr>

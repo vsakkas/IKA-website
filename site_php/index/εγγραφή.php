@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $surname = test_input($_POST["surname"]);
     if (!preg_match("/^[A-Za-zα-ωΑ-Ω ίϊΐόάέύϋΰήώΆΈΉΊΌΎΏ-]+$/u",$surname))
     {
-      $nameErr = "Μόνο γράμματα και το κενό διάστημα επιτρέπονται!";
+      $surnameErr = "Μόνο γράμματα και το κενό διάστημα επιτρέπονται!";
       $correct_input = false;
     }
   }
@@ -129,7 +129,7 @@ else
 
 if($correct_input)
 {
-  include 'insert_to_db.php';
+  include '../php/insert_to_db.php';
 
   $result = signup($email,$password,$name,$surname,$amka,$type,$id_number);
 
@@ -196,7 +196,7 @@ function test_input($data)
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"../php/logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {

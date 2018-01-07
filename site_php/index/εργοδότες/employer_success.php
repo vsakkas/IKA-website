@@ -44,7 +44,7 @@ header( "refresh:5;url=$temp" );
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"../page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"../logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"../page_not_found.php\">$temp</a></li><li class=\"last\"><a href=\"../../php/logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {

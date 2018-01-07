@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 // define variables and set to empty values
 $correct_input = false;
 $name = $surname = $email = $password = $verify_password = $amka = $id_number = $type = "";
-include 'search_into_db.php';
+include '../php/search_into_db.php';
 $email = $_SESSION['login_user'];
 $password = $_SESSION['login_password'];
 all_info($email,$password,$name,$surname,$amka,$id_number,$type);

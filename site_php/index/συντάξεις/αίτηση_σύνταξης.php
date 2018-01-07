@@ -54,8 +54,8 @@ else
 
 if($correct_input)
 {
-  include '../search_into_db.php';
-  include '../insert_to_db.php';
+  include '../../php/search_into_db.php';
+  include '../../php/insert_to_db.php';
 
   $result = signin($username,$password);
 
@@ -126,7 +126,7 @@ function test_input($data)
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"../λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"../logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"../λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"../../php/logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
@@ -153,7 +153,7 @@ function test_input($data)
             <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
             <br>
             <tr>
-            <td align="right">Όνομα Χρήστη:</td>
+            <td align="right">Όνομα Χρήστη (E-Mail):</td>
             <td align="left">
               <input type="text" name="username" value="<?php echo $username;?>"/>
             </td>
