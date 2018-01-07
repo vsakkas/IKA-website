@@ -1,0 +1,150 @@
+html{overflow-y:scroll;} /* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
+
+body{margin:0; padding:0; font-size:16px; font-family:Impact, Charcoal, sans-serif; color:#919191; background-color:#232323;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; clear:both;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+code{font-weight:normal; font-style:normal; font-family:Impact, Charcoal, sans-serif;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+.imgholder, .imgl, .imgr{padding:4px; border:1px solid #D6D6D6; text-align:center;}
+.imgl{float:left; margin:0 15px 15px 0; clear:left;}
+.imgr{float:right; margin:0 0 15px 15px; clear:right;}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+article, footer, header, nav, section{display:block; margin:0; padding:0;}
+
+q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+q:before{content:'� '; font-size:26px;}
+q:after{content:' �'; font-size:26px; line-height:0;}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left; box-shadow: -30px 30px 30px 30px #232323;}
+
+.row1, .row1 a{color:#ECECEC; background-color:#0074D9;}
+.row2{color:#666666; background-color:#FFFFFF;}
+.row2 a{color:#666666; background-color:#FFFFFF;}
+.row3, .row3 a{color:#666666; background-color:#232323;}
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+#header, #container, #footer{display:block; width:1080px; margin:0 auto;}
+
+nav ul{margin:0; padding:0; list-style:none;}
+
+h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:16px; font-weight:bold; font-style:normal; line-height:normal; text-transform:uppercase;}
+
+q{display:block; padding:8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+q:before{content:'� '; font-size:26px;}
+q:after{content:' �'; font-size:26px; line-height:0;}
+
+form, fieldset, legend{margin:0; padding:0; border:none;}
+legend{display:none;}
+input, textarea, select{font-size:13px; font-family:Impact, Charcoal, sans-serif;}
+
+.one_quarter, .two_quarter, .three_quarter, .four_quarter{display:block; float:left; margin:10px 20px 20px 0;}
+.one_quarter{width:270px;}
+.two_quarter{width:530px;}
+.three_quarter{width:750px;}
+.four_quarter{width:1080px; float:none; margin-right:0; clear:both;}
+.lastbox{margin-right:0;}
+
+/*----------------------------------------------Header-------------------------------------*/
+
+#header{padding:15px 0;}
+
+#header #hgroup{float:left; margin:0 0 15px 0;}
+#header #hgroup h1, #header #hgroup h2{font-weight:normal; text-transform:none;}
+#header #hgroup h1{font-size:42px;}
+#header #hgroup h1 a:hover{color:#FF851B; background-color:#0074D9;}
+#header #hgroup h2{font-size:16px;}
+
+#header nav{display:block; float:right; margin:10px 0 0 0; padding:20px 0; color:#ECECEC; background-color:#0763B4;}
+#header nav ul{padding:0 20px;}
+#header nav li{display:inline; margin-right:25px;}
+#header nav li.last{margin-right:0;}
+#header nav li a{color:#ECECEC; background-color:#0763B4;}
+#header nav li a:hover{color:#FF851B; background-color:#0763B4;}
+
+/*----------------------------------------------Content Area-------------------------------------*/
+
+#container{padding:30px 0;}
+#container section{display:block; width:100%; margin:0 0 30px 0; padding:0;}
+#container .last{margin:0;}
+#container .more{text-align:right;}
+
+/* ------Homepage-----*/
+
+#container #homepage{display:block; width:100%; line-height:1.6em;}
+
+#container #homepage #latest{}
+#container #homepage #latest article{}
+
+/* ------Shout-----*/
+
+#container #shout{padding:0 0 20px 0; border-bottom:1px solid #DEDEDE; text-align:center;}
+#container #shout p{font-size:20px; margin:0; padding:0; line-height:1.8em;}
+
+/* ------Main Content-----*/
+
+#container #content{float:left; width:630px; line-height:1.6em;}
+
+#container #content #services{}
+#container #content #services ul{margin:0; padding:0; list-style:none;}
+#container #content #services ul li{display:block; width:100%; margin-bottom:30px;}
+#container #content #services ul li.last{ margin-bottom:0;}
+#container #content #services ul li article{}
+
+/* ------Right Column-----*/
+
+#container #right_column{float:right; width:280px;}
+#container #right_column h2.title{margin-bottom:15px; padding-bottom:15px; border-bottom:1px solid #DEDEDE;}
+
+#container #right_column nav{display:block; width:100%;}
+#container #right_column nav ul{margin:0; padding:0; list-style:none;}
+#container #right_column nav li{margin:0 0 3px 0; padding:0;}
+#container #right_column nav li.last{margin-bottom:0;}
+#container #right_column nav a{display:block; margin:0; padding:5px 10px 5px 20px; color:#666666; background:url("../images/orange_file.gif") no-repeat 10px center #FFFFFF; text-decoration:none; border-bottom:1px dotted #666666;}
+#container #right_column nav a:hover{color:#FF851B; background-color:#FFFFFF;}
+
+/*----------------------------------------------Footer-------------------------------------*/
+
+#footer{padding:20px 0;}
+#footer p{margin:0; padding:0;}
+.footer-link{}
+
+/*--------------------Additional--------------------*/
+
+.container_image{position:relative; text-align:center; color:white;}
+
+.bottom-left{position:absolute; bottom:30px; left:30px;}
+.top-left{position:absolute; top:30px; left:30px;}
+.top-right{position:absolute; top:30px; right:45px; font-size:24px;}
+.bottom-right{position:absolute; bottom:30px; right:30px;}
+.centered{position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);}
+
+.top-right a{color:#ECECEC; background-color: transparent;}
+.top-right a:hover{color:#FF851B; background-color: transparent;}
+
+.title{font-size:22px; font-weight:bold; padding:0 0 20px 0}
+.title-link:hover{color:#FF851B !important;}
+
+input[type="text"]{font-size:13px;}
+input[type="submit"] {padding: 15px; font-size:15px; color:#ECECEC; background-color:#0074D9; border:none;}
+input[type="submit"]:hover{color:#ECECEC; background-color:#0763B4;}
+input[type="submit"]:active{color:#FF851B;}
+
+select[type="text"]{font-size:15px;}
+
+.text-link{font-weight:bold}
+.text-link:hover{color:#FF851B;}
