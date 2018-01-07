@@ -66,7 +66,7 @@ else if($type == "4")
               </table>
             </td>
           </tr>
-          <tr class="heading">
+          <tr class="dark-heading">
             <td>
               Στοιχεία Συνταξιούχου:
             </td>

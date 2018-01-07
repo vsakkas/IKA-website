@@ -216,14 +216,13 @@ function test_input($data)
       <div id="homepage">
         <div class="container_form">
           <form method="post" action="">
-            <table>
               <tr>Για ασφάλιση ενός εργαζομένου, απλά κάνε σύνδεση στον Ατομικό Λογαριασμό Ασφάλισής σου μέσα από την
               παρακάτω φόρμα και έπειτα συμπλήρωσε τα στοιχεία του εργαζομένου:</tr>
               <br>
               <p>Δεν έχεις Ατομικό Λογαριασμό Ασφάλισης; Μπορείς να κάνεις
             <a class="text-link" href="../εγγραφή.php">Εγγραφή</a> τώρα.</p>
             <br>
-              <td align="top" style="float:left;">
+              <td align="top">
                 <b>Στοιχεία Εργοδότη:</b>
                 <table>
                 <td align="right">Όνομα Χρήστη (E-Mail):</td>
@@ -243,20 +242,11 @@ function test_input($data)
             <span class="error">* <?php echo $passwordErr;?></span>
             </td>
           </tr>
-          <td align="left">
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-                  <br>
-                  <br>
-                  <span class="error">* Υποχρεωτικά πεδία</span>
-                </td>
               </tr>
                 </table>
               </td>
-              <td align="top" style="float:right;">
+              <br>
+              <td align="top">
                 <b>Στοιχεία Εργαζομένου:</b>
                 <table>
                   <tr>
@@ -297,7 +287,6 @@ function test_input($data)
                     </td>
                   </tr>
                   <tr>
-                  <td align="right"></td>
                   <td>
                   <span class="error">* <?php echo $typeErr;?></span>
                   </td>
@@ -312,7 +301,9 @@ function test_input($data)
                   <tr>
                 </table>
               </td>
-            </table>
+              <td align="left">
+                  <span class="error">* Υποχρεωτικά πεδία</span>
+                </td>
           </form>
           <br>
           <br>

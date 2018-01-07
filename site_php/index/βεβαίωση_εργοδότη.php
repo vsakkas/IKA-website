@@ -68,7 +68,7 @@ $employees_details = all_employees($amka);
               </table>
             </td>
           </tr>
-          <tr class="heading">
+          <tr class="dark-heading">
             <td>
               Στοιχεία Εργοδότη:
             </td>
@@ -110,11 +110,9 @@ $employees_details = all_employees($amka);
                   <?php echo $id_number; ?> </b>
               </td>
             </tr>
-            <tr class="heading">
+            <tr class="dark-heading">
               <td>
-                <center>
-                  <b>Εργαζόμενοι:</b>
-                </center>
+                <b>Εργαζόμενοι:</b>
               </td>
               <td>
               </td>
