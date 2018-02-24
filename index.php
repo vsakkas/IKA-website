@@ -48,7 +48,7 @@
           {
             $temp = $_SESSION['login_user'];
             ///header("Location: ../index.php");
-            echo "<li><a href=\"index/λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"index/logout.php\">Αποσύνδεση</a></li>";
+            echo "<li><a href=\"index/λογαριασμός.php\">$temp</a></li><li class=\"last\"><a href=\"php/logout.php\">Αποσύνδεση</a></li>";
           }
           else
           {
@@ -101,8 +101,8 @@
         </section>
         <p>
           Έχεις κάποιο πρόβλημα ή απορία; Δες τις
-          <a class="text-link" href="page_not_found.php">Συχνές Ερωτήσεις</a> ή
-          <a class="text-link" href="page_not_found.php">Επικοινώνησε</a> μαζί μας.
+          <a class="text-link" href="index/page_not_found.php">Συχνές Ερωτήσεις</a> ή
+          <a class="text-link" href="index/page_not_found.php">Επικοινώνησε</a> μαζί μας.
         </p>
       </div>
       <!-- / content body -->
