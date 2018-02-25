@@ -1,6 +1,6 @@
 # IKA website
 
-This project is a website for the IKA (national insurance of Greece)
+This project contains a redesigned and functional website for [IKA](http://www.ika.gr/gr/home.cfm) (the Social Insurance Institute of Greece). Goal of this project was to improve the UI and UX, while maintaining some of the key functionality, of the original website. This includes registering with a new account, logging in to an existing account and using some of the services that both this and the original website offer to their target audiences by providing an interface that is easy to understand and interact with.
 
 ## Getting Started
 
@@ -60,4 +60,4 @@ Then you can take a look on the website!
 
 ## License
 
-This project is licensed under the MIT License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
