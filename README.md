@@ -56,7 +56,12 @@ After following the above steps you can just go on your web browser and type
 ```
 http://localhost/IKA-website/index.php
 ```
-Then you can take a look on the website!
+You can now take a look at the website!
+
+## Authors
+* [vsakkas](https://github.com/vsakkas)
+
+* [v-pap](https://github.com/v-pap)
 
 ## License
 
