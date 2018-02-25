@@ -4,8 +4,8 @@ function OpenCon()
  {
  $dbhost = "localhost";
  $dbuser = "root";
- $dbpass = "1234";
- $db = "sdi1400139_sdi1400175";
+ $dbpass = "";
+ $db = "IKAdb";
 
 
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
